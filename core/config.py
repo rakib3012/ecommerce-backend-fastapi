@@ -1,0 +1,3 @@
+
+ALGORITHM = "HS256"
+SECRET_KEY = "KASD25487SDFA-rakbi-jwt-cecret-2026"

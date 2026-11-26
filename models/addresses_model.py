@@ -69,4 +69,5 @@ class Address(Base):
         onupdate=func.now(),
     )
 
+    # relationship
     user: Mapped["User"] = relationship(back_populates="addresses")

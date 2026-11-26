@@ -134,6 +134,7 @@ class Order(Base):
         onupdate=func.now(),
     )
 
+    # relationship
     user: Mapped["User | None"] = relationship(back_populates="orders")
     items: Mapped[list["OrderItem"]] = relationship(
         back_populates="order",

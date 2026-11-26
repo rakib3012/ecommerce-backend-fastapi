@@ -37,5 +37,6 @@ class Wishlist(Base):
         server_default=func.now(),
     )
 
+    # relationship
     user: Mapped["User"] = relationship(back_populates="wishlists")
     product: Mapped["Product"] = relationship(back_populates="wishlists")

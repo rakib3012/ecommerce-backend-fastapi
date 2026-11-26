@@ -88,4 +88,5 @@ class IncompleteOrder(Base):
         onupdate=func.now(),
     )
 
+    # relationship
     user: Mapped["User | None"] = relationship(back_populates="incomplete_orders")

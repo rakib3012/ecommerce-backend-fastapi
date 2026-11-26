@@ -62,4 +62,5 @@ class OrderItem(Base):
         server_default=func.now(),
     )
 
+    # relationship
     order: Mapped["Order"] = relationship(back_populates="items")

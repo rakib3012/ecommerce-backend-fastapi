@@ -84,4 +84,5 @@ class PaymentTransaction(Base):
         onupdate=func.now(),
     )
 
+    # relationship
     order: Mapped["Order"] = relationship(back_populates="payment_transactions")

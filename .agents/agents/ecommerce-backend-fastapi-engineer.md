@@ -30,7 +30,7 @@ commandExecutionPolicy: sandbox
 - `models`: SQLAlchemy persistence.
 - `core`: config/database/security.
 - `api/v1/deps.py`: existing DB/auth/role dependencies.
-Follow actual naming and import patterns. The screenshots are not enough to infer class or function signatures.
+Follow actual naming and import patterns. Always use meaningful, complete words for every variable, property, attribute, and parameter name; never use `_`, single-letter names, symbols, or incomplete/abbreviated words (e.g., use `admin_user: User = Depends(require_admin)` instead of `_: User`). The screenshots are not enough to infer class or function signatures.
 
 ## 4. Domain implementation
 Catalog: Product parent, ProductVariant size/color SKU. Query variant stock and related data efficiently. Search/filter follows PostgreSQL FTS and actual indexes.

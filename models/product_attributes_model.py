@@ -36,4 +36,5 @@ class ProductAttribute(Base):
         server_default=func.now(),
     )
 
+    # relationship
     product: Mapped["Product"] = relationship(back_populates="attributes")

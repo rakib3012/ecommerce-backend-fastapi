@@ -46,6 +46,9 @@ Layer boundaries:
 
 Trace one comparable feature end-to-end before changing another. Reuse the nearest working pattern. Keep changes focused and avoid unrelated refactors.
 
+Naming standard:
+- Always use meaningful, complete words for every variable, property, attribute, and parameter name. Never use `_`, single-letter names, symbols, unmeaningful names, or incomplete/abbreviated words (e.g., use `admin_user: User = Depends(require_admin)` instead of `_: User = Depends(require_admin)`).
+
 ## 4. Commerce invariants
 1. Server-authoritative pricing: calculate prices, discounts, coupons, delivery fees and totals from trusted DB records. Never trust client totals.
 2. Stock is tracked at ProductVariant/SKU level.
@@ -108,7 +111,10 @@ Strictly prohibited (never run or perform, even if seemingly helpful):
 - **NO Database Migrations:** Never run any Alembic commands (`alembic revision`, `alembic upgrade`, `alembic downgrade`, etc.) and never create, modify, or delete files inside `alembic/versions/`. The human developer handles all database migrations manually.
 
 Conditional / explicit-request-only actions:
-- **Git & GitHub Operations:** Do NOT run `git` or `gh` commands (`git init`, `git add`, `git commit`, `git push`, etc.) on your own. Only run `git` / `gh` commit and push operations when the user explicitly asks you to commit and push. Never force-push or discard user work without explicit approval.
+- **Git & GitHub Operations:** Do NOT run `git` or `gh` commands (`git init`, `git add`, `git commit`, `git push`, etc.) on your own. Only run `git` / `gh` branch, commit, and push operations when the user explicitly asks you to commit and push. Never force-push or discard user work without explicit approval.
+- **Branch & Commit Standard (when committing/pushing by user request):**
+  - **Feature/Task Branches:** Use `feat/<scope>`, `fix/<scope>`, `refactor/<scope>`, `test/<scope>`, `docs/<scope>`, or `chore/<scope>` so each branch contains a complete, working vertical slice.
+  - **Conventional Commits (layer-separated on the branch):** Use `feat(models): ...`, `feat(schemas): ...`, `feat(services): ...`, `feat(api): ...`, `feat(core): ...`, `test(...): ...`, `fix(...): ...`, `chore(...): ...`, `docs(...): ...`.
 
 Primary scope of work:
 - Focus strictly on application code: SQLAlchemy Models (`models/`), Pydantic Schemas (`schemas/`), business logic Services (`services/`), and FastAPI API Endpoints (`api/v1/endpoints/`).

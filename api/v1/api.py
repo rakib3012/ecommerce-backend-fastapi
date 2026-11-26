@@ -4,10 +4,12 @@ from api.v1.endpoints import (
     cart_items,
     carts,
     categories,
+    orders,
     product_attributes,
     product_images,
     products,
     users,
+    wishlists,
 )
 
 router = APIRouter()
@@ -27,3 +29,5 @@ router.include_router(
 )
 router.include_router(carts.router, prefix="/carts", tags=["Carts"])
 router.include_router(cart_items.router, prefix="/cart-items", tags=["Cart Items"])
+router.include_router(wishlists.router, prefix="/wishlists", tags=["Wishlists"])
+router.include_router(orders.router, prefix="/orders", tags=["Orders"])

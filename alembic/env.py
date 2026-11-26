@@ -5,8 +5,7 @@ from sqlalchemy import pool
 
 from alembic import context
 from models.base import Base
-from models.addresses_model import Address
-from models.users_model import User
+import models # ata models/__init__.py theke shob shob model load kore nebe
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

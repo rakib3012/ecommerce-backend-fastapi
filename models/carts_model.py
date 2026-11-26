@@ -54,6 +54,7 @@ class Cart(Base):
         onupdate=func.now(),
     )
 
+    # relationship
     user: Mapped["User | None"] = relationship(back_populates="cart")
     items: Mapped[list["CartItem"]] = relationship(
         back_populates="cart",

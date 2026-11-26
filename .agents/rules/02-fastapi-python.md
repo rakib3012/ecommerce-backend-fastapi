@@ -14,3 +14,4 @@ globs: "**/*.py"
 - Use timezone-aware timestamps consistent with the project.
 - Handle known DB errors narrowly; do not swallow broad exceptions.
 - Never expose hashes, tokens, secrets or internal provider details in responses/logs.
+- Always use meaningful, complete words for every variable, property, attribute, and parameter name; never use `_`, single-letter names, symbols, unmeaningful names, or incomplete/abbreviated words (e.g., `admin_user: User = Depends(require_admin)` instead of `_: User`).

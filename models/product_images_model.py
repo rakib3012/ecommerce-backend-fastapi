@@ -57,5 +57,6 @@ class ProductImage(Base):
         server_default=func.now(),
     )
 
+    # relationship
     product: Mapped["Product"] = relationship(back_populates="images")
     variant: Mapped["ProductVariant | None"] = relationship(back_populates="images")

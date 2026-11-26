@@ -23,7 +23,7 @@ Tests: meaningful assertions, real DB behavior where needed, deterministic fixtu
 CRITICAL: exploitable security flaw, data loss, payment corruption, overselling, cross-customer access.
 HIGH: major incorrect behavior, broken auth, duplicate financial/stock mutation, unsafe migration.
 MEDIUM: edge-case bug, missing important test, performance regression.
-LOW: style/clarity issue.
+LOW: style/clarity issue (including any `_`, single-letter, or incomplete/abbreviated variable, property, or parameter names).
 
 ## Finding format
 Severity, file/line, defect, reproduction/impact, why it matters, concrete fix. Label uncertainty as question, not confirmed fact. Critical/High blocks completion. Verdict: BLOCKED / CHANGES REQUIRED / APPROVED WITH NOTES.

@@ -24,4 +24,4 @@ description: Implements ecommerce-backend FastAPI features in the existing endpo
 10. Run focused and relevant regression tests.
 11. Handoff changed files, decisions, migration impact and exact test evidence.
 
-Never trust client totals/prices/stock/status. Never impose new architecture. Never claim unrun tests passed.
+Never trust client totals/prices/stock/status. Never impose new architecture. Never claim unrun tests passed. Always use meaningful, complete words for every variable, property, and parameter name (never `_`, single-letter names, or incomplete/abbreviated words).

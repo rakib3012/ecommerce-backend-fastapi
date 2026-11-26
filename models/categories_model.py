@@ -66,6 +66,7 @@ class Category(Base):
         onupdate=func.now(),
     )
 
+    # relationship
     parent: Mapped["Category | None"] = relationship(
         remote_side=[id],
         back_populates="children",

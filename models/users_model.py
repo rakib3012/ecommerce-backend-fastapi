@@ -63,31 +63,31 @@ class User(Base):
     )
 
     # --- Relationships ---
-    # # 1. One-to-Many: Ekjon user-er ekadhik address thakte pare (user delete hole address-o delete hoye jabe)
-    # addresses: Mapped[list["Address"]] = relationship(
-    #     back_populates="user",
-    #     cascade="all, delete-orphan",
-    # )
+    # 1. One-to-Many: Ekjon user-er ekadhik address thakte pare (user delete hole address-o delete hoye jabe)
+    addresses: Mapped[list["Address"]] = relationship(
+        back_populates="user",
+        cascade="all, delete-orphan",
+    )
 
-    # # 2. One-to-One: Ekjon user-er sudhu ekta active cart thakbe (tai uselist=False dewa hoyeche)
-    # cart: Mapped["Cart | None"] = relationship(
-    #     back_populates="user",
-    #     uselist=False,
-    #     cascade="all, delete-orphan",
-    # )
+    # 2. One-to-One: Ekjon user-er sudhu ekta active cart thakbe (tai uselist=False dewa hoyeche)
+    cart: Mapped["Cart | None"] = relationship(
+        back_populates="user",
+        uselist=False,
+        cascade="all, delete-orphan",
+    )
 
-    # # 3. One-to-Many: User-er wishlist-e rakha product gulo
-    # wishlists: Mapped[list["Wishlist"]] = relationship(
-    #     back_populates="user",
-    #     cascade="all, delete-orphan",
-    # )
+    # 3. One-to-Many: User-er wishlist-e rakha product gulo
+    wishlists: Mapped[list["Wishlist"]] = relationship(
+        back_populates="user",
+        cascade="all, delete-orphan",
+    )
 
-    # # 4. One-to-Many: User-er sob order history (user delete holeo order record rakha valo, tai delete-orphan dewa hoyni)
-    # orders: Mapped[list["Order"]] = relationship(
-    #     back_populates="user",
-    # )
+    # 4. One-to-Many: User-er sob order history (user delete holeo order record rakha valo, tai delete-orphan dewa hoyni)
+    orders: Mapped[list["Order"]] = relationship(
+        back_populates="user",
+    )
 
-    # # 5. One-to-Many: User jodi checkout complete na kore drop kore, tar abandoned checkout list
-    # incomplete_orders: Mapped[list["IncompleteOrder"]] = relationship(
-    #     back_populates="user",
-    # )
+    # 5. One-to-Many: User jodi checkout complete na kore drop kore, tar abandoned checkout list
+    incomplete_orders: Mapped[list["IncompleteOrder"]] = relationship(
+        back_populates="user",
+    )

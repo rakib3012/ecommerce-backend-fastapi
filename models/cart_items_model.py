@@ -54,5 +54,6 @@ class CartItem(Base):
         onupdate=func.now(),
     )
 
+    # relationship
     cart: Mapped["Cart"] = relationship(back_populates="items")
     variant: Mapped["ProductVariant"] = relationship(back_populates="cart_items")

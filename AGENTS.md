@@ -46,6 +46,9 @@ Layer boundaries:
 
 Trace one comparable feature end-to-end before changing another. Reuse the nearest working pattern. Keep changes focused and avoid unrelated refactors.
 
+Naming standard:
+- Always use meaningful, complete words for every variable, property, attribute, and parameter name. Never use `_`, single-letter names, symbols, unmeaningful names, or incomplete/abbreviated words (e.g., use `admin_user: User = Depends(require_admin)` instead of `_: User = Depends(require_admin)`).
+
 ## 4. Commerce invariants
 1. Server-authoritative pricing: calculate prices, discounts, coupons, delivery fees and totals from trusted DB records. Never trust client totals.
 2. Stock is tracked at ProductVariant/SKU level.

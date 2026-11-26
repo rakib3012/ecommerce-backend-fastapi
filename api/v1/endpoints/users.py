@@ -17,8 +17,11 @@ from services import users_service
 router = APIRouter()
 
 
-def _raise_service_error(exc: users_service.UserServiceError) -> None:
-    raise HTTPException(status_code=exc.status_code, detail=exc.detail) from exc
+def _raise_service_error(service_error: users_service.UserServiceError) -> None:
+    raise HTTPException(
+        status_code=service_error.status_code,
+        detail=service_error.detail,
+    ) from service_error
 
 
 @router.post(
@@ -81,7 +84,7 @@ async def get_all_users(
     skip: int = Query(default=0, ge=0),
     limit: int = Query(default=50, ge=1, le=100),
     db: AsyncSession = Depends(get_db),
-    _: User = Depends(require_admin),
+    admin_user: User = Depends(require_admin),
 ) -> list[User]:
     """List all users (admin only)."""
     return await users_service.list_users(db, skip=skip, limit=limit)

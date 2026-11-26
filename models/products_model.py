@@ -82,6 +82,8 @@ class Product(Base):
         onupdate=func.now(),
     )
 
+    # relationship
+
     category: Mapped["Category"] = relationship(back_populates="products")
     variants: Mapped[list["ProductVariant"]] = relationship(
         back_populates="product",

@@ -1,10 +1,18 @@
 from datetime import datetime
 from enum import Enum
+from typing import TYPE_CHECKING
 
 from sqlalchemy import Boolean, DateTime, Enum as SAEnum, String, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from models.base import Base
+
+if TYPE_CHECKING:
+    from models.addresses_model import Address
+    from models.carts_model import Cart
+    from models.incomplete_orders_model import IncompleteOrder
+    from models.orders_model import Order
+    from models.wishlists_model import Wishlist
 
 
 class UserRole(str, Enum):

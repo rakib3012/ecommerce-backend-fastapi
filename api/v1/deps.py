@@ -51,6 +51,16 @@ async def get_current_user(
     return user
 
 
+async def get_optional_current_user(
+    credentials: HTTPAuthorizationCredentials | None = Depends(bearer_scheme),
+    db: AsyncSession = Depends(get_db),
+) -> User | None:
+    """Return authenticated user if Bearer token is provided, else None."""
+    if credentials is None:
+        return None
+    return await get_current_user(credentials=credentials, db=db)
+
+
 async def require_admin(
     current_user: User = Depends(get_current_user),
 ) -> User:

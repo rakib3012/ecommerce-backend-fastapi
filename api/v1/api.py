@@ -1,6 +1,8 @@
 from fastapi import APIRouter
 
 from api.v1.endpoints import (
+    cart_items,
+    carts,
     categories,
     product_attributes,
     product_images,
@@ -23,3 +25,5 @@ router.include_router(
     prefix="/product-attributes",
     tags=["Product Attributes"],
 )
+router.include_router(carts.router, prefix="/carts", tags=["Carts"])
+router.include_router(cart_items.router, prefix="/cart-items", tags=["Cart Items"])
